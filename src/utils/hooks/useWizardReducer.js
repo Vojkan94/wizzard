@@ -11,7 +11,7 @@ function useWizardReducer() {
   const safeDispatch = useSafeDispatch(dispatch)
 
   const setGenres = React.useCallback(
-    (genres) => safeDispatch({ genres }),
+    (genres) => safeDispatch({ payload: genres, type: 'setGenres' }),
     [safeDispatch]
   )
 
@@ -21,10 +21,21 @@ function useWizardReducer() {
   }
 }
 
-function wizardReducer(state, payload) {
-  return {
-    ...state,
-    ...payload,
+function wizardReducer(state, action) {
+  switch (action.type) {
+    case 'setGenres':
+      return {
+        ...state,
+        genres: [...action.payload],
+      }
+    case 'addSubgenre':
+      return {
+        ...state,
+        [state.genres[5].subgenres]: [
+          ...state.genres[5].susubgenres,
+          ...action.payload,
+        ],
+      }
   }
 }
 

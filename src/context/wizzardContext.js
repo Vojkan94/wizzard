@@ -1,11 +1,15 @@
 import * as React from 'react'
 import useWizardReducer from 'utils/hooks/useWizardReducer'
-
+import genresData from 'data/dummyData'
 const WizzardContext = React.createContext()
 WizzardContext.displayName = 'WizzardContext'
 
 function WizzardProvider(props) {
   const { setGenres, genres } = useWizardReducer()
+
+  React.useEffect(() => {
+    setGenres(genresData)
+  }, [])
 
   const value = React.useMemo(
     () => ({
