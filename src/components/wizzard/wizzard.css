@@ -1,17 +1,19 @@
 .wizzard-main {
   margin-top: 20px;
+  margin-bottom: 20px;
   padding: 15px;
   width: 550px;
   min-height: 350px;
   border: 1px solid gray;
   border-radius: 5px;
+  position: relative;
 }
 
 .steps-wrapper {
   margin-top: 20px;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 .step-item {
   position: relative;
@@ -59,7 +61,6 @@
 }
 
 .genre-list-wrapper {
-  margin-top: 50px;
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
@@ -82,8 +83,10 @@
   background-color: rgb(79, 77, 88);
 }
 .buttons-wrapper {
-  display: flex;
-  justify-content: flex-end;
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  margin-top: 20px;
 }
 .step-button {
   width: 105px;
@@ -105,4 +108,42 @@
 .step-button:disabled {
   opacity: 0.8;
   cursor: not-allowed;
+}
+
+.new-subgenre-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+textarea,
+select,
+.input-field {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+textarea::placeholder,
+.input-field::placeholder {
+  opacity: 0.7;
+}
+input[type='checkbox'] {
+  transform: scale(1.5);
+}
+.book-info-wrapper {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.info-label {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-size: 13px;
+}
+.info-label textarea,
+.info-label select,
+.info-label input {
+  margin-top: 5px;
 }
