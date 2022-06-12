@@ -3,6 +3,7 @@ import * as React from 'react'
 
 const defaultState = {
   genres: [],
+  lastSubgenreId: 24,
 }
 
 function useWizardReducer() {
@@ -39,17 +40,13 @@ function wizardReducer(state, action) {
       const index = state.genres.findIndex((genre) => {
         return genre.id === action.payload.genreId
       })
-      const lastGenre = state.genres[state.genres.length - 1]
-      const lastSubgenreId =
-        lastGenre.subgenres[lastGenre.subgenres.length - 1].id
-
       const newSubgenre = [
         {
           ...action.payload.subGenre,
-          id: lastSubgenreId + 1,
+          id: state.lastSubgenreId + 1,
         },
       ]
-      const newState = { ...state }
+      const newState = { ...state, lastSubgenreId: state.lastSubgenreId + 1 }
       newState.genres[index].subgenres = [
         ...newState.genres[index].subgenres,
         ...newSubgenre,
