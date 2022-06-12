@@ -1,3 +1,6 @@
 export const createBook = async (data) => {
-  // return await apiClient.get(getUserUrl, data)
+  return await fetch('https://example.com/', {
+    method: 'post',
+    body: JSON.stringify(data),
+  })
 }

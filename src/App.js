@@ -1,10 +1,10 @@
-import WizzardMain from 'components/wizzard/wizzardMain'
+import Home from 'pages/home'
 import './App.css'
 
 function App() {
   return (
     <div className="wizzard-wrapper">
-      <WizzardMain />
+      <Home />
     </div>
   )
 }

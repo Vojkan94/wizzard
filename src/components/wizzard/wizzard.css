@@ -99,11 +99,25 @@
   border-radius: 5px;
   border: 1px solid rgb(202, 202, 202);
 }
+
 .step-button.next {
-  background-color: rgb(79, 77, 88);
+  background-color: #4f4d58;
   border-radius: 5px;
   border: 1px solid rgb(202, 202, 202);
   color: white;
+}
+.step-button.loading {
+  cursor: wait;
+}
+.add-another-book {
+  width: 200px;
+  height: 40px;
+  background-color: #4f4d58;
+  border: 1px solid rgb(202, 202, 202);
+  border-radius: 5px;
+  color: white;
+  margin-top: 30px;
+  cursor: pointer;
 }
 .step-button:disabled {
   opacity: 0.8;
@@ -146,4 +160,22 @@ input[type='checkbox'] {
 .info-label select,
 .info-label input {
   margin-top: 5px;
+}
+
+.step-finished {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  flex-direction: column;
+}
+.checkmark {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: rgb(230, 230, 230);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
 }

@@ -5,7 +5,7 @@ const WizzardContext = React.createContext()
 WizzardContext.displayName = 'WizzardContext'
 
 function WizzardProvider(props) {
-  const { setGenres, genres } = useWizardReducer()
+  const { setGenres, genres, addSubgenre } = useWizardReducer()
 
   React.useEffect(() => {
     setGenres(genresData)
@@ -14,6 +14,7 @@ function WizzardProvider(props) {
   const value = React.useMemo(
     () => ({
       genres,
+      addSubgenre,
     }),
     [genres]
   )

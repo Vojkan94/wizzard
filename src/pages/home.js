@@ -1,5 +1,5 @@
 import React from 'react'
-
-const Home = () => ''
+import WizzardMain from 'components/wizzard/wizzardMain'
+const Home = () => <WizzardMain />
 
 export default Home
